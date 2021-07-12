@@ -13,13 +13,13 @@ function preload(){
   polygon_img=loadImage("polygon.png");
 }
 function setup() {
-  createCanvas(1200,400);
+  createCanvas(900,400);
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
   ground = new Ground();
   stand1 = new Stand(390,300,250,10);
-  stand2 = new Stand(900,200,200,10);
+  stand2 = new Stand(700,200,200,10);
  
   //level one
   block1 = new Block(300,275,30,40);
@@ -43,14 +43,19 @@ function setup() {
   //top
   block16 = new Block(390,155,30,40);
  
-  block17 = new Block(840, 170, 30, 40);
-  block18 = new Block(960, 170, 30, 40);
-  block19 = new Block(900, 140, 30, 40);
-  block20 = new Block(930, 140, 30, 40);
-  block21 = new Block(870, 140, 30, 40);
- 
-  block22 = new Block(900, 110, 30, 40);
-  
+  //set 2 for second stand
+  //level one
+  blocks1 = new Block(640,175,30,40);
+  blocks2 = new Block(670,175,30,40);
+  blocks3 = new Block(700,175,30,40);
+  blocks4 = new Block(730,175,30,40);
+  blocks5 = new Block(760,175,30,40);
+  //level two
+  blocks6 = new Block(670,135,30,40);
+  blocks7 = new Block(700,135,30,40);
+  blocks8 = new Block(730,135,30,40);
+  //top
+  blocks9 = new Block(700,95,30,40);
 
   lol = Bodies.circle(50,200,25)
   World.add(world,lol)
@@ -64,7 +69,13 @@ function draw() {
   imageMode(CENTER)
   image(polygon_img,lol.position.x,lol.position.y,40,40)
   textSize(20);
+  
+  textSize(20);
   fill("lightyellow");
+  text("Drag the polygon to destroy the blocks",300,30);
+  textSize(10);
+  text("Press Space to get a second Chance to Play!!",650 ,350);
+
   
 
   ground.display();
@@ -93,14 +104,18 @@ function draw() {
   block15.display();
   fill("grey");
   block16.display();
-  block17.display();
-  block18.display();
-  fill("lightGreen");
-  block19.display();
-  block20.display();
-  block21.display();
-  fill("green");
-  block22.display();
+  fill("skyblue");
+  blocks1.display();
+  blocks2.display();
+  blocks3.display();
+  blocks4.display();
+  blocks5.display();
+  fill("turquoise");
+  blocks6.display();
+  blocks7.display();
+  blocks8.display();
+  fill("pink")
+  blocks9.display();
 
   slingShot.display();
  
